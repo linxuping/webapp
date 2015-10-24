@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="ComAndroidSupportAppcompatV71901.aar" >
+        <source path="/home/linxp/git/webinside/app/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/home/linxp/git/webinside/app/src/main/assets" >
+            <file
+                name="wst.html"
+                path="/home/linxp/git/webinside/app/src/main/assets/wst.html" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/linxp/git/webinside/app/src/debug/assets" />
+    </dataSet>
+
+</merger>
