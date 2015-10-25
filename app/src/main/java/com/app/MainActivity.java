@@ -35,15 +35,15 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		contentWebView = (WebView) findViewById(R.id.webview);
-		msgView = (TextView) findViewById(R.id.msg);
+		//msgView = (TextView) findViewById(R.id.msg);
 		// using javascript
 		contentWebView.getSettings().setJavaScriptEnabled(true);
 		//
-		contentWebView.loadUrl("file:///android_asset/wst.html");
+		contentWebView.loadUrl("file:///android_asset/MobileBootstrap/forms.html");
 
-		Button button = (Button) findViewById(R.id.button);
-		button.setOnClickListener(btnClickListener);
-		contentWebView.addJavascriptInterface(this, "wst");
+		//Button button = (Button) findViewById(R.id.button);
+		//button.setOnClickListener(btnClickListener);
+		//contentWebView.addJavascriptInterface(this, "wst");
 
         m_vib = (Vibrator)this.getSystemService(Service.VIBRATOR_SERVICE);
 
