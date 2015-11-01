@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
@@ -65,6 +66,8 @@ public class MainActivity extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		contentWebView = (WebView) findViewById(R.id.webview);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+            contentWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 		//msgView = (TextView) findViewById(R.id.msg);
 		// using javascript
 		contentWebView.getSettings().setJavaScriptEnabled(true);
