@@ -1,10 +1,10 @@
-<!-- From: file:/home/linxp/git/webinside/app/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.app">
+<!-- From: file:/home/linxp/git/webapp/app/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.app">
     <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="19"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/linxp" android:label="@string/app_name">
         <activity android:label="@string/app_name" android:name="com.app.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
