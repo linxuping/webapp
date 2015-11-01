@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="themes/Bootstrap.css">
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="themes/common.css" />
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
 
@@ -177,13 +178,14 @@
 					</div>
 				</form>
 
+                <button id='ToggleConnection1' type="button" onclick='ToggleConnectionClicked();'>连接服务器</button><br />
+                <button id='ToggleConnection2' type="button" onclick='SendData();'>发送我的名字：beston</button><br />
+                <button id='ToggleConnection3' type="button" onclick='seestate();'>查看状态</button><br />
+                <div id="content">内容显示</div>
+
 			</div>
 
-			<button id='ToggleConnection1' type="button" onclick='ToggleConnectionClicked();'>连接服务器</button><br /><br />
-			<button id='ToggleConnection2' type="button" onclick='SendData();'>发送我的名字：beston</button><br /><br />
-			<button id='ToggleConnection3' type="button" onclick='seestate();'>查看状态</button><br /><br />
 
-			<div id="content">内容显示</div>
 
 
 		</div>
