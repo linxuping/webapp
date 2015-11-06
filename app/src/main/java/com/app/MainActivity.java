@@ -12,10 +12,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -74,7 +76,29 @@ public class MainActivity extends Activity {
 		//
 		contentWebView.loadUrl("file:///android_asset/MobileBootstrap/forms.html");
 
-		//Button button = (Button) findViewById(R.id.button);
+        contentWebView.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);   //在当前的webview中跳转到新的url
+                return true;
+            }
+        });
+        //点击后退按钮,让WebView后退一页(也可以覆写Activity的onKeyDown方法)
+        contentWebView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    if (keyCode == KeyEvent.KEYCODE_BACK && contentWebView.canGoBack()) {  //表示按返回键时的操作
+                        contentWebView.goBack();   //后退
+                        //webview.goForward();//前进
+                        return true;    //已处理
+                    }
+                }
+                return false;
+            }
+        });
+
+        //Button button = (Button) findViewById(R.id.button);
 		//button.setOnClickListener(btnClickListener);
 		//contentWebView.addJavascriptInterface(this, "wst");
 
@@ -117,7 +141,8 @@ public class MainActivity extends Activity {
                         //if ("Hello Server".equals(s))
                         m_vib.vibrate(1000);
                         sendNotify();
-                        webSocket.send("Welcome Client!");
+                        int _height = getWindowManager().getDefaultDisplay().getHeight();
+                        webSocket.send("Get height: " + Integer.toString(_height));
                     }
                 });
 
@@ -128,7 +153,8 @@ public class MainActivity extends Activity {
             socket.send("Fireball!");
     }
 
-	OnClickListener btnClickListener = new Button.OnClickListener() {
+
+    OnClickListener btnClickListener = new Button.OnClickListener() {
 		public void onClick(View v) {
 			//no args.
 			contentWebView.loadUrl("javascript:javacalljs()");
